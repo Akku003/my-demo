@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
 @import url("../fonts/gordita/stylesheet.css");
-@import url("../fonts/bootstrap-icons-1.10.2/font.css");
 * {
   margin: 0;
   padding: 0;
@@ -13281,5 +13280,341 @@ body.compensate-for-scrollbar {
   opacity: 1;
   box-shadow: none;
 }
+/* ===============================
+   Dark Mode Styles
+================================ */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6 {
+  color: #ffffff;
+}
+
+/* Header */
+body[data-theme="dark"] .theme-main-menu {
+  background: #1e1e1e;
+}
+
+/* Login link should stay green */
+.login-link {
+  color: #00BF58 !important;
+}
+
+/* Dark toggle background */
+body[data-theme="dark"] .theme-toggle {
+  background: #333;
+}
+
+
+/* ===============================
+   Theme Toggle Icons
+================================ */
+
+/* Center icons */
+.theme-toggle .toggle-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Force icon visibility */
+.theme-toggle i {
+  font-size: 13px;
+  color: #000; /* visible on white thumb */
+}
+
+/* Light mode → show moon */
+body:not([data-theme="dark"]) .bi-moon {
+  display: inline-block;
+}
+
+body:not([data-theme="dark"]) .bi-sun {
+  display: none;
+}
+
+/* Dark mode → show sun */
+body[data-theme="dark"] .bi-sun {
+  display: inline-block;
+  color: #f1c40f; /* sun yellow */
+}
+
+body[data-theme="dark"] .bi-moon {
+  display: none;
+}
+
+/* ===============================
+   Dark Mode Header 
+================================ */
+
+/* Menu links */
+body[data-theme="dark"] .theme-main-menu .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+/* Hover / active */
+body[data-theme="dark"] .theme-main-menu .navbar-nav .nav-link:hover,
+body[data-theme="dark"] .theme-main-menu .navbar-nav .active > .nav-link {
+  color: #00bf58; /* green accent */
+}
+/* ===============================
+   Dark Mode 
+================================ */
+
+body[data-theme="dark"] .hero-banner-four::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Ensure text is above overlay */
+.hero-banner-four .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Banner text color */
+body[data-theme="dark"] .hero-banner-four h1,
+body[data-theme="dark"] .hero-banner-four p {
+  color: #ffffff;
+}
+
+/* ===============================
+   Navbar Link Typography
+================================ */
+
+.theme-main-menu .navbar-nav .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;          /* slightly bigger */
+  font-weight: 500;
+  padding: 8px 14px;        /* reduces height */
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Reduce navbar height */
+.theme-main-menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body[data-theme="dark"] .theme-main-menu .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+/* ===============================
+   Login & Register Typography
+================================ */
+
+/* Login text */
+.theme-main-menu .right-widget a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Register button text */
+.theme-main-menu .right-widget .btn-five {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.theme-main-menu .right-widget li {
+  margin-left: 14px;
+}
+
+/* ===============================
+   Upload CV Button
+================================ */
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #00bf58;          /* green */
+  color: #ffffff;               /* white text */
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.upload-btn:hover {
+  background: #009e48;
+  color: #ffffff;
+}
+
+.upload-btn i {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* ===============================
+   Banner Search Typography
+================================ */
+
+/* Labels above inputs */
+.hero-banner-four label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6f6f6f;
+}
+
+/* Select dropdowns */
+.hero-banner-four select {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Text input */
+.hero-banner-four input[type="text"] {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Placeholder text */
+.hero-banner-four input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9a;
+}
+
+/* SEARCH button text */
+.hero-banner-four .btn-five,
+.hero-banner-four button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 30px;
+}
+
+/* Dark mode input text */
+body[data-theme="dark"] .hero-banner-four label {
+  color: #cccccc;
+}
+
+body[data-theme="dark"] .hero-banner-four select,
+body[data-theme="dark"] .hero-banner-four input[type="text"] {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+body[data-theme="dark"] .hero-banner-four input::placeholder {
+  color: #aaaaaa;
+}
+
+/* ===============================
+   Sticky Header 
+================================ */
+
+/* Make header sticky */
+.theme-main-menu {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Light mode shadow */
+.theme-main-menu {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode background */
+body[data-theme="dark"] .theme-main-menu {
+  background: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Override Jobi scroll behavior */
+.theme-main-menu.menu-overlay {
+  position: sticky !important;
+}
+body {
+  scroll-padding-top: 80px;
+}
+/* =================================
+   FORCE HEADER TO STAY VISIBLE
+================================= */
+
+/* Kill overlay behavior */
+.theme-main-menu.menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  background: #ffffff !important;
+  transform: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 99999;
+}
+
+/* Prevent JS from hiding it */
+.theme-main-menu.fixed {
+  position: fixed !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* Dark mode background */
+body[data-theme="dark"] .theme-main-menu {
+  background: #1e1e1e !important;
+}
+body {
+  padding-top: 90px;
+}
+
+/* =================================
+   Reduce Banner Top Spacing
+================================= */
+
+/* Default (desktop) */
+.hero-banner-four {
+  padding-top: 76px !important;
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1199px) {
+  .hero-banner-four {
+    padding-top: 100px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+  .hero-banner-four {
+    padding-top: 90px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-banner-four {
+    padding-top: 80px !important;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
+

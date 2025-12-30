@@ -3,21 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!toggleBtn) return;
 
+  const body = document.body;
+
   // Load saved theme
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
+    body.setAttribute("data-theme", "dark");
   }
 
   toggleBtn.addEventListener("click", function () {
-    const isDark =
-      document.documentElement.getAttribute("data-theme") === "dark";
+    const isDark = body.getAttribute("data-theme") === "dark";
 
     if (isDark) {
-      document.documentElement.removeAttribute("data-theme");
+      body.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
     } else {
-      document.documentElement.setAttribute("data-theme", "dark");
+      body.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
     }
   });
