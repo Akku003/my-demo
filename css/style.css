@@ -2161,6 +2161,9 @@ hr {
   left: 0;
   background: transparent;
 }
+.theme-main-menu .theme-main-menu.menu-overlay .logo img {
+  max-height: 100px;
+}
 .theme-main-menu.fixed {
   position: fixed;
   left: 0;
@@ -2374,7 +2377,8 @@ hr {
   color: #00BF58;
 }
 
-.theme-main-menu .mega-dropdown, .theme-main-menu .navbar {
+.theme-main-menu .mega-dropdown,
+.theme-main-menu .navbar {
   position: static;
 }
 
@@ -2672,6 +2676,53 @@ hr {
     top: -2px;
   }
 }
+.theme-main-menu .logo img {
+  max-height: 90px;
+  width: auto;
+}
+
+.theme-main-menu .theme-toggle {
+  display: inline-flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===============================
+   Dark / Light Theme Toggle
+================================ */
+.theme-toggle {
+  width: 48px;
+  height: 26px;
+  background: #e5e5e5;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Toggle thumb */
+.theme-toggle .toggle-thumb {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode state */
+[data-theme=dark] .theme-toggle {
+  background: #2b2b2b;
+}
+
+[data-theme=dark] .theme-toggle .toggle-thumb {
+  transform: translateX(22px);
+}
+
 /*(max-width: 991px)*/
 .hero-banner-one {
   background: #244034;
@@ -3352,6 +3403,10 @@ hr {
 }
 .inner-banner-one .candidate-profile-card.list-layout .cadidate-skills {
   position: static;
+}
+
+.theme-main-menu .right-widget {
+  overflow: visible;
 }
 
 .category-section-one {
