@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initThemeToggle() {
   const toggleBtn = document.getElementById("themeToggle");
-
   if (!toggleBtn) return;
 
   const body = document.body;
@@ -22,4 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("theme", "dark");
     }
   });
-});
+}
+(function () {
+  const header = document.querySelector(".theme-main-menu");
+  if (!header) return;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 50) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    },
+    { passive: true }
+  );
+})();
+

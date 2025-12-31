@@ -133,16 +133,16 @@
 			</div> <!-- /.hero-banner-four -->
 		</div>
 		<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="js/theme_dark_light.js"></script>
 		<script>
 			fetch('header.html')
 				.then(r => r.text())
 				.then(html => {
 					document.getElementById('header-placeholder').innerHTML = html;
+					initThemeToggle();
 				})
 				.catch(err => console.error('Header load failed:', err));
-				
 		</script>
+		<script src="js/theme_dark_light.js"></script>
 </body>
 
 </html>
