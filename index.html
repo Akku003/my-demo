@@ -40,219 +40,26 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 	<!-- responsive style sheet -->
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600&display=swap"
+		rel="stylesheet">
 </head>
 
-<body>
+<body class="home-page">
 	<div class="main-page-wrapper">
-		<div class="main-page-wrapper">
 			<!-- 
 		=============================================
 				Theme Main Menu
 		============================================== 
 		-->
-			<header class="theme-main-menu menu-overlay sticky-menu">
-				<div class="inner-content position-relative">
-					<div class="top-header">
-						<div class="d-flex align-items-center justify-content-between">
-							<div class="logo order-lg-0">
-								<a href="index.html" class="d-flex align-items-center">
-									<img src="images/assets/placera_logo.png" alt="Placera logo" width="120">
-								</a>
-							</div>
-							<!-- logo -->
-							<div class="right-widget ms-auto ms-lg-0 order-lg-2">
-								<ul class="d-flex align-items-center style-none">
-									<li><a href="#" class="fw-500 login-link" data-bs-toggle="modal"
-											data-bs-target="#loginModal">Login</a></li>
-									<li class="d-none d-md-block ms-4"><a href="signup.html"
-											class="btn-five">Register</a></li>
-									<li class="ms-4">
-										<button id="themeToggle"
-											class="theme-toggle d-inline-flex align-items-center justify-content-center"
-											aria-label="Toggle theme">
-											<span class="toggle-thumb">
-												<i class="bi bi-sun"></i>
-												<i class="bi bi-moon"></i>
-											</span>
-										</button>
-									</li>
-								</ul>
-							</div> <!--/.right-widget-->
-							<nav class="navbar navbar-expand-lg p0 ms-3 ms-lg-0 order-lg-1">
-								<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
-									data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-									aria-label="Toggle navigation">
-									<span></span>
-								</button>
-								<div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav">
-										<li class="d-block d-lg-none">
-											<div class="logo"><a href="index.html" class="d-block"><img
-														src="images/assets/placera_logo.png" alt="" width="100"></a>
-											</div>
-										</li>
-										<li class="nav-item dropdown dashboard-menu">
-											<a class="nav-link dropdown-toggle" href="#" role="button"
-												data-bs-toggle="dropdown" data-bs-auto-close="outside"
-												aria-expanded="false">Dashboard
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="dashboard/candidate-dashboard-index.html"
-														class="dropdown-item" target="_blank"><span>Candidate
-														</span></a></li>
-												<li><a href="dashboard/employer-dashboard-index.html"
-														class="dropdown-item" target="_blank"><span>Employer
-														</span></a></li>
-											</ul>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" role="button"
-												data-bs-toggle="dropdown" data-bs-auto-close="outside"
-												aria-expanded="false">Home
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="index.html" class="dropdown-item"><span>Home</span></a>
-												</li>
-											</ul>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" role="button"
-												data-bs-toggle="dropdown" data-bs-auto-close="outside"
-												aria-expanded="false">Job
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="job-list-v1.html" class="dropdown-item"><span>Job List
-															style -1</span></a></li>
-												<li><a href="job-list-v2.html" class="dropdown-item"><span>Job List
-															style -2</span></a></li>
-												<li><a href="job-list-v3.html" class="dropdown-item"><span>Job List
-															style -3</span></a></li>
-												<li><a href="job-grid-v1.html" class="dropdown-item"><span>Job Grid
-															style -1</span></a></li>
-												<li><a href="job-grid-v2.html" class="dropdown-item"><span>Job Grid
-															style -2</span></a></li>
-												<li><a href="job-grid-v3.html" class="dropdown-item"><span>Job Grid
-															style -3</span></a></li>
-												<li><a href="job-details-v1.html" class="dropdown-item"><span>Job
-															Details v-1</span></a></li>
-												<li><a href="job-details-v2.html" class="dropdown-item"><span>Job
-															Details v-2</span></a></li>
-											</ul>
-										</li>
-										<li class="nav-item dropdown mega-dropdown-sm">
-											<a class="nav-link dropdown-toggle" href="#" role="button"
-												data-bs-toggle="dropdown" data-bs-auto-close="outside"
-												aria-expanded="false">Explore
-											</a>
-											<ul class="dropdown-menu">
-												<li class="row gx-1">
-													<div class="col-md-4">
-														<div class="menu-column">
-															<h6 class="mega-menu-title">Candidates</h6>
-															<ul class="style-none mega-dropdown-list">
-																<li><a href="candidates-v1.html"
-																		class="dropdown-item"><span>Candidates
-																			V-1</span></a></li>
-																<li><a href="candidates-v2.html"
-																		class="dropdown-item"><span>Candidates
-																			V-2</span></a></li>
-																<li><a href="candidates-v3.html"
-																		class="dropdown-item"><span>Candidates
-																			V-3</span></a></li>
-																<li><a href="candidates-v4.html"
-																		class="dropdown-item"><span>Candidates
-																			V-4</span></a></li>
-																<li><a href="candidate-profile-v1.html"
-																		class="dropdown-item"><span>Candidates Details
-																			v-1</span></a></li>
-																<li><a href="candidate-profile-v2.html"
-																		class="dropdown-item"><span>Candidates Details
-																			v-2</span></a></li>
-															</ul>
-														</div> <!--/.menu-column -->
-													</div>
-													<div class="col-md-4">
-														<div class="menu-column">
-															<h6 class="mega-menu-title">Company</h6>
-															<ul class="style-none mega-dropdown-list">
-																<li><a href="company-v1.html"
-																		class="dropdown-item"><span>Company
-																			V-1</span></a></li>
-																<li><a href="company-v2.html"
-																		class="dropdown-item"><span>Company
-																			V-2</span></a></li>
-																<li><a href="company-v3.html"
-																		class="dropdown-item"><span>Company
-																			V-3</span></a></li>
-																<li><a href="company-v4.html"
-																		class="dropdown-item"><span>Company
-																			V-4</span></a></li>
-																<li><a href="company-details.html"
-																		class="dropdown-item"><span>Company
-																			Details</span></a></li>
-															</ul>
-														</div> <!--/.menu-column -->
-													</div>
-													<div class="col-md-4">
-														<div class="menu-column">
-															<h6 class="mega-menu-title">Essential</h6>
-															<ul class="style-none mega-dropdown-list">
-																<li><a href="about-us.html"
-																		class="dropdown-item"><span>About Us</span></a>
-																</li>
-																<li><a href="pricing.html"
-																		class="dropdown-item"><span>Pricing</span></a>
-																</li>
-																<li><a href="faq.html"
-																		class="dropdown-item"><span>Faq's</span></a>
-																</li>
-																<li><a href="signup.html"
-																		class="dropdown-item"><span>Register</span></a>
-																</li>
-																<li><a href="404.html" class="dropdown-item"><span>404
-																			Error</span></a></li>
-															</ul>
-														</div> <!--/.menu-column -->
-													</div>
-												</li>
-											</ul>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" role="button"
-												data-bs-toggle="dropdown" data-bs-auto-close="outside"
-												aria-expanded="false">Blog
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="blog-v1.html" class="dropdown-item"><span>Blog
-															Standard</span></a></li>
-												<li><a href="blog-v2.html" class="dropdown-item"><span>Blog
-															Grid</span></a></li>
-												<li><a href="blog-v3.html" class="dropdown-item"><span>Blog Full
-															width</span></a></li>
-												<li><a href="blog-details.html" class="dropdown-item"><span>Blog
-															Details</span></a></li>
-											</ul>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="contact.html" role="button">Contact</a>
-										</li>
-										<li class="d-md-none mt-5"><a href="signup.html"
-												class="btn-five w-100">Register</a></li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div> <!--/.top-header-->
-				</div> <!-- /.inner-content -->
-			</header> <!-- /.theme-main-menu -->
+
+		<div id="header-placeholder"></div>
 
 			<!-- 
 		=============================================
 			 Banner
 		============================================== 
 		-->
-			<div class="hero-banner-four position-relative pt-160 lg-pt-150 pb-300 lg-pb-150 md-pb-100">
+			<div class="hero-banner-four position-relative pt-80 lg-pt-60 pb-300">
 				<div class="container">
 					<div class="position-relative pb-70 sm-pb-20">
 						<div class="row">
@@ -326,6 +133,13 @@
 					class="lazy-img shapes shape_04">
 			</div> <!-- /.hero-banner-four -->
 		</div>
+		<script>
+			fetch('partials/header.html')
+				.then(r => r.text())
+				.then(html => {
+					document.getElementById('header-placeholder').innerHTML = html;
+				});
+		</script>
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/theme_dark_light.js"></script>
 </body>
