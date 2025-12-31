@@ -45,7 +45,6 @@
 </head>
 
 <body class="home-page">
-	<div class="main-page-wrapper">
 			<!-- 
 		=============================================
 				Theme Main Menu
@@ -59,11 +58,11 @@
 			 Banner
 		============================================== 
 		-->
-			<div class="hero-banner-four position-relative pt-80 lg-pt-60 pb-300">
+			<div class="hero-banner-four">
 				<div class="container">
 					<div class="position-relative pb-70 sm-pb-20">
 						<div class="row">
-							<div class="col-lg-7 col-lg-6 m-auto text-center">
+							<div class="col-lg-7 m-auto text-center">
 								<h1>Automate your career path without any hassle.</h1>
 								<p class="text-md mt-25 mb-45 md-mb-30">Smart prep. Fast tracking. Global opportunities.
 								</p>
@@ -133,15 +132,17 @@
 					class="lazy-img shapes shape_04">
 			</div> <!-- /.hero-banner-four -->
 		</div>
+		<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="js/theme_dark_light.js"></script>
 		<script>
-			fetch('partials/header.html')
+			fetch('header.html')
 				.then(r => r.text())
 				.then(html => {
 					document.getElementById('header-placeholder').innerHTML = html;
-				});
+				})
+				.catch(err => console.error('Header load failed:', err));
+				
 		</script>
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/theme_dark_light.js"></script>
 </body>
 
 </html>
