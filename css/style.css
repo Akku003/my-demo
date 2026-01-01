@@ -2043,100 +2043,6 @@ hr {
   position: absolute;
 }
 
-.ctn-preloader {
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 999999;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.ctn-preloader .icon {
-  animation: rotated 8s infinite linear;
-}
-
-.ctn-preloader .txt-loading {
-  user-select: none;
-  margin-top: 30px;
-}
-
-.ctn-preloader .txt-loading .letters-loading {
-  font-family: "EB Garamond", serif;
-  font-weight: 700;
-  letter-spacing: 8px;
-  display: inline-block;
-  color: rgba(0, 191, 88, 0.12);
-  position: relative;
-  font-size: 50px;
-  line-height: 30px;
-}
-
-.ctn-preloader .txt-loading .letters-loading::before {
-  animation: letters-loading 4s infinite;
-  color: #00BF58;
-  content: attr(data-text-preloader);
-  left: 0;
-  opacity: 0;
-  top: 0;
-  line-height: 30px;
-  position: absolute;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(2):before {
-  animation-delay: 0.2s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(3):before {
-  animation-delay: 0.4s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(4):before {
-  animation-delay: 0.6s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(5):before {
-  animation-delay: 0.8s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(6):before {
-  animation-delay: 1s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(7):before {
-  animation-delay: 1.2s;
-}
-
-.ctn-preloader .txt-loading .letters-loading:nth-child(8):before {
-  animation-delay: 1.4s;
-}
-
-@keyframes spinner {
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes letters-loading {
-
-  0%,
-  75%,
-  100% {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-
-  25%,
-  50% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
 
 .scroll-top {
   width: 35px;
@@ -3174,7 +3080,7 @@ hr {
   transform: translateX(22px);
 }
 
-/*(max-width: 991px)*/
+/* (max-width: 991px)
 .hero-banner-one {
   background: #244034;
   z-index: 9;
@@ -3334,7 +3240,7 @@ hr {
   bottom: 5%;
   left: -16%;
   width: 28%;
-}
+} */
 
 .hero-banner-four {
   background: url("../images/assets/banner_img.jpg") no-repeat center top;
@@ -3370,7 +3276,7 @@ hr {
   animation: jumpFour 5s infinite linear;
 }
 
-.hero-banner-five {
+/* .hero-banner-five {
   background: #fff;
   z-index: 2;
 }
@@ -3471,7 +3377,7 @@ hr {
   top: 30%;
   left: 3%;
   z-index: -1;
-}
+} */
 
 .fancy-banner-one .bg-wrapper {
   background: #244034;
@@ -16042,6 +15948,58 @@ body[data-theme="dark"] .footer-one input[type="email"] {
 }
 .theme-main-menu {
   transition: padding 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+body[data-theme="dark"] #chatbot-widget {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body[data-theme="dark"] .quick-actions button {
+  background: #2a2a2a;
+  color: #fff;
+}
+/* Greeting bubble */
+#chatbot-greeting {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  max-width: 220px;
+  background: #ffffff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 1999;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Small arrow pointing to button */
+#chatbot-greeting::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 16px;
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* Hide helper */
+#chatbot-greeting.hidden {
+  display: none;
+}
+
+/* Subtle animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 

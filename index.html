@@ -42,107 +42,116 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="chatbot/chatbot.css">
 </head>
 
 <body class="home-page">
-			<!-- 
+	<!-- 
 		=============================================
 				Theme Main Menu
 		============================================== 
 		-->
 
-		<div id="header-placeholder"></div>
+	<div id="header-placeholder"></div>
 
-			<!-- 
+	<!-- 
 		=============================================
 			 Banner
 		============================================== 
 		-->
-			<div class="hero-banner-four">
-				<div class="container">
-					<div class="position-relative pb-70 sm-pb-20">
-						<div class="row">
-							<div class="col-lg-7 m-auto text-center">
-								<h1>Automate your career path without any hassle.</h1>
-								<p class="text-md mt-25 mb-45 md-mb-30">Smart prep. Fast tracking. Global opportunities.
-								</p>
-							</div>
-						</div>
-						<div class="position-relative">
-							<div class="row">
-								<div class="col-xxl-8 col-xl-9 col-lg-10 m-auto">
-									<div class="job-search-one style-two position-relative">
-										<form action="#">
-											<div class="row align-items-center">
-												<div class="col-md-3">
-													<div class="input-box">
-														<div class="label">Job Categories</div>
-														<select class="nice-select lg">
-															<option value="1">Software Engineer</option>
-															<option value="2">Web Developer</option>
-															<option value="3">UI/UX Designer</option>
-															<option value="4">Business Analyst</option>
-															<option value="5">Backend Developer</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-md-3">
-													<div class="input-box">
-														<div class="label">Location</div>
-														<select class="nice-select lg">
-															<option value="1">Trivandrum</option>
-															<option value="2">Kochi</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-md-3">
-													<div class="input-box border-left">
-														<div class="label">Keywords or Title</div>
-														<input type="text" placeholder="Developer, Programming"
-															class="keyword">
-													</div>
-												</div>
-												<div class="col-md-3 sm-mb-10 sm-mt-10">
-													<button
-														class="text-uppercase btn-five border6 tran3s m-auto">Search</button>
-												</div>
+	<div class="hero-banner-four">
+		<div class="container">
+			<div class="position-relative pb-70 sm-pb-20">
+				<div class="row">
+					<div class="col-lg-7 m-auto text-center">
+						<h1>Automate your career path without any hassle.</h1>
+						<p class="text-md mt-25 mb-45 md-mb-30">Smart prep. Fast tracking. Global opportunities.
+						</p>
+					</div>
+				</div>
+				<div class="position-relative">
+					<div class="row">
+						<div class="col-xxl-8 col-xl-9 col-lg-10 m-auto">
+							<div class="job-search-one style-two position-relative">
+								<form action="#">
+									<div class="row align-items-center">
+										<div class="col-md-3">
+											<div class="input-box">
+												<div class="label">Job Categories</div>
+												<select class="nice-select lg">
+													<option value="1">Software Engineer</option>
+													<option value="2">Web Developer</option>
+													<option value="3">UI/UX Designer</option>
+													<option value="4">Business Analyst</option>
+													<option value="5">Backend Developer</option>
+												</select>
 											</div>
-										</form>
-										<div
-											class="upload-btn position-relative d-flex align-items-center justify-content-between">
-											<span class="fw-500 text-dark me-1">Upload your CV</span> <i
-												class="bi bi-file-earmark-arrow-up"></i>
-											<input type="file" id="uploadCV" name="uploadCV"
-												accept=".doc,.docx,.pdf,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+										</div>
+										<div class="col-md-3">
+											<div class="input-box">
+												<div class="label">Location</div>
+												<select class="nice-select lg">
+													<option value="1">Trivandrum</option>
+													<option value="2">Kochi</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="input-box border-left">
+												<div class="label">Keywords or Title</div>
+												<input type="text" placeholder="Developer, Programming" class="keyword">
+											</div>
+										</div>
+										<div class="col-md-3 sm-mb-10 sm-mt-10">
+											<button
+												class="text-uppercase btn-five border6 tran3s m-auto">Search</button>
 										</div>
 									</div>
-									<!-- /.job-search-one -->
+								</form>
+								<div
+									class="upload-btn position-relative d-flex align-items-center justify-content-between">
+									<span class="fw-500 text-dark me-1">Upload your CV</span> <i
+										class="bi bi-file-earmark-arrow-up"></i>
+									<input type="file" id="uploadCV" name="uploadCV"
+										accept=".doc,.docx,.pdf,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 								</div>
 							</div>
+							<!-- /.job-search-one -->
 						</div>
 					</div>
 				</div>
-				<img src="images/lazy.svg" data-src="images/assets/screen_10.png" alt=""
-					class="lazy-img shapes shape_01">
-				<img src="images/lazy.svg" data-src="images/assets/screen_11.png" alt=""
-					class="lazy-img shapes shape_02">
-				<img src="images/lazy.svg" data-src="images/assets/screen_12.png" alt=""
-					class="lazy-img shapes shape_03">
-				<img src="images/lazy.svg" data-src="images/assets/screen_13.png" alt=""
-					class="lazy-img shapes shape_04">
-			</div> <!-- /.hero-banner-four -->
+			</div>
 		</div>
-		<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script>
-			fetch('header.html')
-				.then(r => r.text())
-				.then(html => {
-					document.getElementById('header-placeholder').innerHTML = html;
-					initThemeToggle();
-				})
-				.catch(err => console.error('Header load failed:', err));
-		</script>
-		<script src="js/theme_dark_light.js"></script>
+		<img src="images/lazy.svg" data-src="images/assets/screen_10.png" alt="" class="lazy-img shapes shape_01">
+		<img src="images/lazy.svg" data-src="images/assets/screen_11.png" alt="" class="lazy-img shapes shape_02">
+		<img src="images/lazy.svg" data-src="images/assets/screen_12.png" alt="" class="lazy-img shapes shape_03">
+		<img src="images/lazy.svg" data-src="images/assets/screen_13.png" alt="" class="lazy-img shapes shape_04">
+	</div> <!-- /.hero-banner-four -->
+	</div>
+	<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script>
+		fetch('header.html')
+			.then(r => r.text())
+			.then(html => {
+				document.getElementById('header-placeholder').innerHTML = html;
+				initThemeToggle();
+			})
+			.catch(err => console.error('Header load failed:', err));
+	</script>
+	<script src="js/theme_dark_light.js"></script>
+
+	<div id="chatbot-container"></div>
+
+	<script>
+		fetch("chatbot/chatbot.html")
+			.then(r => r.text())
+			.then(html => {
+				document.getElementById("chatbot-container").innerHTML = html;
+				initChatbot();
+			})
+			.catch(err=>console.log(err));
+	</script>
+	<script src="chatbot/chatbot.js" defer></script>
 </body>
 
 </html>

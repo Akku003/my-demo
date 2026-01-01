@@ -1,0 +1,28 @@
+<!-- Floating Chat Button -->
+<div id="chatbot-launcher">
+    <i class="bi bi-chat-dots-fill"></i>
+</div>
+
+<!-- Chat Widget -->
+<div id="chatbot-widget" class="hidden">
+    <div class="chatbot-header">
+        <span>AI Placement Assistant</span>
+        <button id="chatbot-close">&times;</button>
+    </div>
+    <!-- Greeting Notification Bubble -->
+    <div id="chatbot-greeting">
+        👋 Hi! Need help with placements?
+    </div>
+
+    <div class="chatbot-body" id="chatbot-messages">
+        <!-- Messages/cards will render here -->
+        <div class="bot-message">
+            <p>How can I help you today?</p>
+            <div class="quick-actions">
+                <button data-intent="ELIGIBILITY">Check Eligibility</button>
+                <button data-intent="COMPARE">Compare Companies</button>
+                <button data-intent="STATS">Placement Stats</button>
+            </div>
+        </div>
+    </div>
+</div>
