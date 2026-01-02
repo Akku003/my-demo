@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords"
+        content="AI, Automation, Chatbot, ATS-based Resume Analyzer, Real-time Data Synchronization, Automated Eligibility Mapping, Digital Placement Management System, LBSITW">
+    <meta name="description"
+        content="PLACERA - A comprehensive Digital Placement Management System leveraging AI and automation to streamline end-to-end campus placement activities.">
+    <meta property="og:site_name" content="PLACERA">
+    <meta property="og:url" content="https://placera.com"> <!--deployed URL-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PLACERA - AI Based Placement Assistance and Support System">
+    <meta property="og:description"
+        content="Empowering students and recruiters with intelligent placement tools, ATS resume checking, and real-time notifications. [cite: 68, 69]">
+    <meta property="og:image" content="images/assets/placera_logo.png">
+    <meta name="author" content="Aacquiline Linu Varghese, Abhirami JP, Annamary Mathew, Aysha V H">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For Window Tab Color -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#244034">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#244034">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+    <title>PLACERA - AI Based Placement Assistance and Support System</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+    <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- responsive style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="login-page">
+    <div class="container">
+        <div class="user-data-form">
+            <div class="text-center text-dark">
+                <h2>Hi, Welcome Back!</h2>
+                <p>Still don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+            <div class="form-wrapper m-auto">
+                <form if="loginForm" action="#" class="mt-10">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group-meta position-relative mb-25">
+                                <label>Email*</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group-meta position-relative mb-20">
+                                <label>Password*</label>
+                                <input type="password" placeholder="Enter Password" class="pass_log_id" required>
+                                <span class="placeholder_icon"><span class="passVicon"><img
+                                            src="images/icon/icon_60.svg" alt=""></span></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="agreement-checkbox d-flex justify-content-between align-items-center">
+                                <div>
+                                    <input type="checkbox" id="remember">
+                                    <label for="remember">Keep me logged in</label>
+                                </div>
+                                <a href="#">Forgot Password?</a>
+                            </div> <!-- /.agreement-checkbox -->
+                        </div>
+                        <div class="col-12">
+                            <button class="btn-eleven fw-500 tran3s d-block mt-20">Login</button>
+                        </div>
+                    </div>
+                    <p id="loginError" style="color:red; display:none;"></p>
+
+                </form>
+                <div class="d-flex align-items-center mt-30 mb-10">
+                    <div class="line"></div>
+                    <span class="pe-3 ps-3">OR</span>
+                    <div class="line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#"
+                            class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+                            <img src="images/icon/google.png" alt="">
+                            <span class="ps-2">Login with Google</span>
+                        </a>
+                    </div>
+                </div>
+                <p class="text-center mt-10">Don't have an account? <a href="signup.html" class="fw-500">Sign
+                        up</a></p>
+            </div>
+            <!-- /.form-wrapper -->
+        </div>
+        <!-- /.user-data-form -->
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const errorEl = document.getElementById("loginError");
+
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            try {
+                const response = await fetch("http://localhost:5000/api/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Login failed");
+                }
+
+                // Store JWT and role
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("role", data.role);
+
+                // Redirect based on role
+                if (data.role === "admin") {
+                    window.location.href = "admin-dashboard.html";
+                } else {
+                    window.location.href = "candidate-dashboard.html";
+                }
+
+            } catch (err) {
+                errorEl.innerText = err.message;
+                errorEl.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
