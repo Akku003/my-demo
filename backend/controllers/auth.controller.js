@@ -7,55 +7,41 @@ const jwt = require("jsonwebtoken");
  */
 exports.register = async (req, res) => {
   try {
-    const { email, password, role, register_number } = req.body;
+    const { email, password,register_number,f_name,m_name,l_name } = req.body;
 
     //1.Basic validation
-    if (!email || !password || !role) {
-      return res.status(400).json({ message: "Missing required fields" });
+    if (!email || !password || !register_number || !f_name || !l_name) {
+      return res.status(400).json({ message: "Email, password,register number,First and Last names are required" });
     }
-
-    if (!["candidate", "admin"].includes(role)) {
-      return res.status(400).json({ message: "Invalid role" });
+    if (!register_number.startsWith("LBT")) {
+      return res.status(400).json({
+        message: "Register number must start with LBT"
+      });
     }
-
-    //2.Candidate-specific validation
-    if (role === "candidate") {
-      if (!register_number) {
-        return res.status(400).json({ message: "Register number is required" });
-      }
-
-      if (!register_number.startsWith("LBT")) {
-        return res.status(400).json({
-          message: "Register number must start with LBT",
-        });
-      }
-    }
-
     //3.Hash password
     const passwordHash = await bcrypt.hash(password, 10);
 
     //4.Insert into users table
     const userResult = await pool.query(
       `INSERT INTO users (email, password_hash, role)
-       VALUES ($1, $2, $3)
+       VALUES ($1, $2, 'candidate')
        RETURNING id`,
-      [email, passwordHash, role]
+      [email, passwordHash]
     );
 
-    const userId = userResult.rows[0].id;
+    const user_id = userResult.rows[0].id;
 
     //5.Insert candidate profile if needed
-    if (role === "candidate") {
+
       await pool.query(
-        `INSERT INTO candidate_profiles (user_id, register_number)
-         VALUES ($1, $2)`,
-        [userId, register_number]
+        `INSERT INTO candidate_profiles (user_id, register_number,f_name,m_name,l_name)
+         VALUES ($1, $2,$3,$4,$5)`,
+        [user_id, register_number,f_name,m_name,l_name]
       );
-    }
 
     //6.Success response
     return res.status(201).json({
-      message: "Registration successful",
+      message: "Candidate Profile Registration successful",
     });
   } catch (error) {
     // Email or register number already exists

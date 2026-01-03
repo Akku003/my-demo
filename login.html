@@ -52,7 +52,7 @@
                 <p>Still don't have an account? <a href="signup.html">Sign up</a></p>
             </div>
             <div class="form-wrapper m-auto">
-                <form if="loginForm" action="#" class="mt-10">
+                <form id="loginForm" action="#" class="mt-10">
                     <div class="row">
                         <div class="col-12">
                             <div class="input-group-meta position-relative mb-25">
@@ -63,7 +63,8 @@
                         <div class="col-12">
                             <div class="input-group-meta position-relative mb-20">
                                 <label>Password*</label>
-                                <input type="password" placeholder="Enter Password" class="pass_log_id" required>
+                                <input type="password" id="password" placeholder="Enter Password" class="pass_log_id"
+                                    required>
                                 <span class="placeholder_icon"><span class="passVicon"><img
                                             src="images/icon/icon_60.svg" alt=""></span></span>
                             </div>
@@ -105,49 +106,82 @@
         </div>
         <!-- /.user-data-form -->
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-        const loginForm = document.getElementById("loginForm");
-        const errorEl = document.getElementById("loginError");
+        document.addEventListener("DOMContentLoaded", function () {
 
-        loginForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            const loginForm = document.getElementById("loginForm");
+            const errorEl = document.getElementById("loginError");
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            try {
-                const response = await fetch("http://localhost:5000/api/auth/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.message || "Login failed");
-                }
-
-                // Store JWT and role
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("role", data.role);
-
-                // Redirect based on role
-                if (data.role === "admin") {
-                    window.location.href = "admin-dashboard.html";
-                } else {
-                    window.location.href = "candidate-dashboard.html";
-                }
-
-            } catch (err) {
-                errorEl.innerText = err.message;
-                errorEl.style.display = "block";
+            if (!loginForm) {
+                console.error("loginForm not found in DOM");
+                return;
             }
+
+            loginForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                try {
+                    const response = await fetch("http://localhost:5000/api/auth/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.message || "Login failed");
+                    }
+
+                    localStorage.setItem("token", data.token);
+                    localStorage.setItem("role", data.role);
+
+                    if (data.role === "admin") {
+                        window.location.href = "dashboard/admin-dashboard-index.html";
+                    } else {
+                        window.location.href = "dashboard/candidate-dashboard-index.html";
+                    }
+
+                } catch (err) {
+                    errorEl.innerText = err.message;
+                    errorEl.style.display = "block";
+                }
+            });
+
         });
     </script>
+    <!-- Optional JavaScript _____________________________  -->
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- WOW js -->
+    <script src="/js/wow/wow.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="/js/slick/slick.min.js"></script>
+    <!-- Fancybox -->
+    <script src="/js/fancybox/dist/jquery.fancybox.min.js"></script>
+    <!-- Lazy -->
+    <script src="/js/jquery.lazy.min.js"></script>
+    <!-- js Counter -->
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <!-- Nice Select -->
+    <script src="/js/nice-select/jquery.nice-select.min.js"></script>
+    <!-- validator js -->
+    <script src="/js/validator.js"></script>
+
+    <!-- Theme js -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/theme_dark_light.js"></script>
 
 </body>
 

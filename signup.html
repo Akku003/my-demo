@@ -54,7 +54,7 @@
 						<div class="title-two">
 							<h2 class="text-white">Register</h2>
 						</div>
-						<p class="text-lg text-white mt-30 lg-mt-20">Create an account & Start posting or hiring talents
+						<p class="text-lg text-white mt-30 lg-mt-20">Create your Academic Profile
 						</p>
 					</div>
 				</div>
@@ -74,121 +74,91 @@
 					<h2 class="text-dark">Create Account</h2>
 				</div>
 				<div class="form-wrapper m-auto">
-					<ul class="nav nav-tabs border-0 w-100 mt-30" role="tablist">
-						<li class="nav-item" role="presentation">
-							<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
-								role="tab">Candidate</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
-								role="tab">Employer</button>
-						</li>
-					</ul>
 					<div class="tab-content mt-40">
-						<div class="tab-pane fade show active" role="tabpanel" id="fc1">
-							<form action="#">
-								<div class="row">
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-25">
-											<label>Name*</label>
-											<input type="text" placeholder="Full Name">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-25">
-											<label>Email*</label>
-											<input type="email" placeholder="Email">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-20">
-											<label>Password*</label>
-											<input type="password" placeholder="Enter Password" class="pass_log_id">
-											<span class="placeholder_icon"><span class="passVicon"><img
-														src="images/icon/icon_60.svg" alt=""></span></span>
-										</div>
-									</div>
-									<div class="col-12">
-										<div
-											class="agreement-checkbox d-flex justify-content-between align-items-center">
-											<div>
-												<input type="checkbox" id="remember">
-												<label for="remember">Agree to the
-													<a href="#">Terms conditions</a> & <a href="#">Privacy
-														Policy</a></label>
-											</div>
-										</div> <!-- /.agreement-checkbox -->
-									</div>
-									<div class="col-12">
-										<button class="btn-eleven fw-500 tran3s d-block mt-20">Register</button>
+						<form id="registerForm" action="#">
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-25">
+										<label>Registration Number*</label>
+										<input type="text" id="register_number"
+											placeholder="Enter your registration number(LBT...)" required>
 									</div>
 								</div>
-							</form>
-						</div>
-						<!-- /.tab-pane -->
-						<div class="tab-pane fade" role="tabpanel" id="fc2">
-							<form action="#">
-								<div class="row">
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-25">
-											<label>Name*</label>
-											<input type="text" placeholder="Full Name">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-25">
-											<label>Email*</label>
-											<input type="email" placeholder="Mail">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="input-group-meta position-relative mb-10">
-											<label>Password*</label>
-											<input type="password" placeholder="Enter Password" class="pass_log_id">
-											<span class="placeholder_icon"><span class="passVicon"><img
-														src="images/icon/icon_60.svg" alt=""></span></span>
-										</div>
-									</div>
-									<div class="col-12">
-										<div
-											class="agreement-checkbox d-flex justify-content-between align-items-center">
-											<div>
-												<input type="checkbox" id="remember">
-												<label for="remember">Agree to the
-													<a href="#">Terms conditions</a> & <a href="#">Privacy
-														Policy</a></label>
-											</div>
-										</div> <!-- /.agreement-checkbox -->
-									</div>
-									<div class="col-12">
-										<button class="btn-eleven fw-400 tran3s d-block mt-20">Register</button>
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-25">
+										<label>First Name*</label>
+										<input type="text" id="f_name" placeholder="Enter your first name" required>
 									</div>
 								</div>
-							</form>
-						</div>
-						<!-- /.tab-pane -->
-					</div>
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-25">
+										<label>Middle Name*</label>
+										<input type="text" id="m_name" placeholder="Enter your middle name">
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-25">
+										<label>Last Name*</label>
+										<input type="text" id="l_name" placeholder="Enter your last name" required>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-25">
+										<label>Email*</label>
+										<input type="email" id="email" placeholder="Enter Email" required>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="input-group-meta position-relative mb-20">
+										<label>Password*</label>
+										<input type="password" id="password" placeholder="Enter Password"
+											class="pass_log_id" required>
+										<span class="placeholder_icon"><span class="passVicon"><img
+													src="images/icon/icon_60.svg" alt=""></span></span>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+										<div>
+											<input type="checkbox" id="remember" required>
+											<label for="remember">Agree to the
+												<a href="#">Terms conditions</a> & <a href="#">Privacy
+													Policy</a></label>
+										</div>
+									</div> <!-- /.agreement-checkbox -->
+								</div>
+								<div class="col-12">
+									<button class="btn-eleven fw-500 tran3s d-block mt-20">Register</button>
+								</div>
+							</div>
+							<p id="registerError" style="color:red; display:none;"></p>
+							<p id="registerSuccess" style="color:green; display:none;"></p>
 
-					<div class="d-flex align-items-center mt-30 mb-10">
-						<div class="line"></div>
-						<span class="pe-3 ps-3 text-dark">OR</span>
-						<div class="line"></div>
+						</form>
 					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<a href="#"
-								class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-								<img src="images/icon/google.png" alt="">
-								<span class="ps-2">Signup with Google</span>
-							</a>
-						</div>
-					</div>
-					<p class="text-center mt-10 text-dark">Have an account? <a href="#" class="fw-500"
-							data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a></p>
+					<!-- /.tab-pane -->
 				</div>
-				<!-- /.form-wrapper -->
+
+				<div class="d-flex align-items-center mt-30 mb-10">
+					<div class="line"></div>
+					<span class="pe-3 ps-3 text-dark">OR</span>
+					<div class="line"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="#"
+							class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+							<img src="images/icon/google.png" alt="">
+							<span class="ps-2">Signup with Google</span>
+						</a>
+					</div>
+				</div>
+				<p class="text-center mt-10 text-dark">Have an account? <a href="#" class="fw-500"
+						data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a></p>
 			</div>
-			<!-- /.user-data-form -->
+			<!-- /.form-wrapper -->
+		</div>
+		<!-- /.user-data-form -->
 		</div>
 	</section>
 	<!-- ./registration-section -->
@@ -358,6 +328,104 @@
 			.catch(err => console.error('Header load failed:', err));
 	</script>
 	<script src="js/theme_dark_light.js"></script>
+	<!-- Optional JavaScript _____________________________  -->
+
+	<!-- jQuery first, then Bootstrap JS -->
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- WOW js -->
+	<script src="/js/wow/wow.min.js"></script>
+	<!-- Slick Slider -->
+	<script src="/js/slick/slick.min.js"></script>
+	<!-- Fancybox -->
+	<script src="/js/fancybox/dist/jquery.fancybox.min.js"></script>
+	<!-- Lazy -->
+	<script src="/js/jquery.lazy.min.js"></script>
+	<!-- js Counter -->
+	<script src="/js/jquery.counterup.min.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<!-- Nice Select -->
+	<script src="/js/nice-select/jquery.nice-select.min.js"></script>
+	<!-- validator js -->
+	<script src="/js/validator.js"></script>
+
+	<!-- Theme js -->
+	<script src="/js/theme.js"></script>
+	<script src="/js/theme_dark_light.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+
+			const registerForm = document.getElementById("registerForm");
+			const errorEl = document.getElementById("registerError");
+			const successEl = document.getElementById("registerSuccess");
+			
+
+			if (!registerForm) {
+				console.error("registerForm not found");
+				return;
+			}
+
+			registerForm.addEventListener("submit", async (e) => {
+				e.preventDefault();
+
+				errorEl.style.display = "none";
+				successEl.style.display = "none";
+
+				const email = document.getElementById("email").value.trim();
+				const password = document.getElementById("password").value.trim();
+				const f_name = document.getElementById("f_name").value.trim();
+				const m_name = document.getElementById("m_name").value.trim();
+				const l_name = document.getElementById("l_name").value.trim();
+				const register_number = document.getElementById("register_number").value.trim();
+
+				// Basic frontend validation
+				if (!register_number.startsWith("LBT")) {
+					errorEl.innerText = "Register number must start with LBT";
+					errorEl.style.display = "block";
+					return;
+				}
+
+				try {
+					const response = await fetch("http://localhost:5000/api/auth/register", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email,
+							password,
+							register_number,
+							f_name,
+							m_name,
+							l_name
+						})
+					});
+
+					const data = await response.json();
+
+					if (!response.ok) {
+						throw new Error(data.message || "Registration failed");
+					}
+
+					successEl.innerText = "Registration successful. Redirecting to login...";
+					successEl.style.display = "block";
+
+					// Redirect to login after short delay
+					setTimeout(() => {
+						window.location.href = "login.html";
+					}, 1500);
+
+				} catch (err) {
+					errorEl.innerText = err.message;
+					errorEl.style.display = "block";
+				}
+			});
+
+		});
+	</script>
+
 </body>
 
 </html>
